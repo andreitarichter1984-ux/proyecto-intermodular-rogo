@@ -1,5 +1,8 @@
 # Soluciones ROGO
 
+## Prototipo navegable (Figma)
+[Abrir el prototipo](https://www.figma.com/proto/ygfcfIKq2HGcSJ9i9ytJ9V/Pantallas-Soluciones-Rogo?node-id=0-1&t=d5YxnsXDGIfeVyJk-1)
+
 ## Descripción del proyecto
 
 Soluciones ROGO es un proyecto académico del Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM).
