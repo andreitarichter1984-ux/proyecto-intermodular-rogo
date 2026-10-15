@@ -7,8 +7,8 @@
 
 - [Documento Tareas 2.1 y 2.2](docs/docPrototipado/Tarea_2_1_y_2_2_Fase_Prototipado.pdf)
 - [Mockups de las pantallas](docs/mockups/)
-- [Diagrama de navegación](docs/navegacion/diagrama_navegacion.pdf)
-- 
+- [Diagrama de navegación](docs/navegacion/Diagrama de navegacion.pdf)
+  
 ## Descripción del proyecto
 
 Soluciones ROGO es un proyecto académico del Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM).
