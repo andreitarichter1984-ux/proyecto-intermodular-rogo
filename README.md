@@ -1,7 +1,7 @@
 # Soluciones ROGO
 
 ## Prototipo navegable (Figma)
-[Abrir el prototipo](https://www.figma.com/proto/ygfcfIKq2HGcSJ9i9ytJ9V/Pantallas-Soluciones-Rogo?node-id=0-1&t=d5YxnsXDGIfeVyJk-1)
+[Abrir el prototipo](https://www.figma.com/proto/ygfcfIKq2HGcSJ9i9ytJ9V/Pantallas-Soluciones-Rogo?node-id=0-1&t=6ixCrIz7B3LhyuE6-1)
 
 ## Descripción del proyecto
 
