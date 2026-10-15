@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROGO · Iniciar sesión</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="auth-page">
+    <main class="auth-card">
+        <div class="brand">
+            <span class="brand-logo">R</span>
+            <span class="brand-name">ROGO</span>
+        </div>
+        <p class="auth-intro">Crea briefings guiados para tus clientes y recibe recomendaciones de identidad visual.</p>
+
+        <div class="tabs" role="tablist">
+            <button class="tab active" id="tab-login" role="tab" aria-selected="true" data-target="form-login">Iniciar sesión</button>
+            <button class="tab" id="tab-register" role="tab" aria-selected="false" data-target="form-register">Crear cuenta</button>
+        </div>
+
+        <div class="alert" id="alert" role="alert" hidden></div>
+
+        <form id="form-login" class="auth-form" novalidate>
+            <label for="login-email">Correo electrónico</label>
+            <input type="email" id="login-email" name="email" autocomplete="email" required>
+
+            <label for="login-password">Contraseña</label>
+            <input type="password" id="login-password" name="contrasena" autocomplete="current-password" required>
+
+            <button type="submit" class="btn-primary">Iniciar sesión</button>
+        </form>
+
+        <form id="form-register" class="auth-form" novalidate hidden>
+            <label for="register-name">Nombre</label>
+            <input type="text" id="register-name" name="nombre" autocomplete="name" required>
+
+            <label for="register-email">Correo electrónico</label>
+            <input type="email" id="register-email" name="email" autocomplete="email" required>
+
+            <label for="register-password">Contraseña</label>
+            <input type="password" id="register-password" name="contrasena" autocomplete="new-password" minlength="8" required>
+            <small class="hint">Mínimo 8 caracteres.</small>
+
+            <label for="register-password2">Repite la contraseña</label>
+            <input type="password" id="register-password2" autocomplete="new-password" required>
+
+            <button type="submit" class="btn-primary">Crear cuenta</button>
+        </form>
+    </main>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

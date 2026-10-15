@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROGO · Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dashboard-page">
+    <aside class="sidebar">
+        <div class="brand">
+            <span class="brand-logo">R</span>
+            <span class="brand-name">ROGO</span>
+        </div>
+        <nav>
+            <a href="dashboard.html" class="nav-link active">Panel principal</a>
+            <a href="#" class="nav-link disabled" aria-disabled="true">Proyectos</a>
+            <a href="#" class="nav-link disabled" aria-disabled="true">Briefings</a>
+            <a href="#" class="nav-link disabled" aria-disabled="true">Clientes</a>
+        </nav>
+        <button id="logout" class="btn-secondary">Cerrar sesión</button>
+    </aside>
+
+    <main class="content">
+        <header class="content-header">
+            <div>
+                <h1>Hola, <span id="user-name">…</span></h1>
+                <p class="muted"><span id="user-email"></span> · Plan <span id="user-plan"></span></p>
+            </div>
+            <button class="btn-primary" disabled title="Próximamente">Nuevo proyecto</button>
+        </header>
+
+        <section>
+            <h2>Tus proyectos</h2>
+            <div id="projects" class="project-list">
+                <p class="muted">Cargando proyectos…</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
