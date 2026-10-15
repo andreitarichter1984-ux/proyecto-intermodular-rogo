@@ -3,6 +3,12 @@
 ## Prototipo navegable (Figma)
 [Abrir el prototipo](https://www.figma.com/proto/ygfcfIKq2HGcSJ9i9ytJ9V/Pantallas-Soluciones-Rogo?node-id=0-1&t=6ixCrIz7B3LhyuE6-1)
 
+## Documentación de prototipado
+
+- [Documento Tareas 2.1 y 2.2](docs/docPrototipado/Tarea_2_1_y_2_2_Fase_Prototipado.pdf)
+- [Mockups de las pantallas](docs/mockups/)
+- [Diagrama de navegación](docs/navegacion/diagrama_navegacion.pdf)
+- 
 ## Descripción del proyecto
 
 Soluciones ROGO es un proyecto académico del Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM).
