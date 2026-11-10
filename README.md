@@ -8,6 +8,12 @@
 - [Documento Tareas 2.1 y 2.2](docs/docPrototipado/Tarea_2_1_y_2_2_Fase_Prototipado.pdf)
 - [Mockups de las pantallas](docs/mockups/)
 - [Diagrama de navegación](docs/navegacion/diagrama_navegacion.pdf)
+
+## Documentación de testeo
+
+- [Diagrama de la técnica de Interacción Constructiva (Figma)](https://www.figma.com/board/KRka5U1YzSmgPUIV64gx7f/Digramas-de-t%C3%A9cnicas-de-testeo?node-id=3-980&t=QrTStEWZxOt9eDgT-4)
+- [Diagrama de la técnica de Evaluación del Valor (Figma)](https://www.figma.com/board/KRka5U1YzSmgPUIV64gx7f/Digramas-de-t%C3%A9cnicas-de-testeo?node-id=4-3055&t=QrTStEWZxOt9eDgT-4)
+  
   
 ## Descripción del proyecto
 
