@@ -13,6 +13,20 @@
 
 - [Diagrama de la técnica de Interacción Constructiva (Figma)](https://www.figma.com/board/KRka5U1YzSmgPUIV64gx7f/Digramas-de-t%C3%A9cnicas-de-testeo?node-id=3-980&t=QrTStEWZxOt9eDgT-4)
 - [Diagrama de la técnica de Evaluación del Valor (Figma)](https://www.figma.com/board/KRka5U1YzSmgPUIV64gx7f/Digramas-de-t%C3%A9cnicas-de-testeo?node-id=4-3055&t=QrTStEWZxOt9eDgT-4)
+
+### Banco de pruebas
+
+- [Documento del banco de pruebas (CP-01 a CP-05)](docs/testeo/Banco_de_pruebas.pdf)
+- [Vídeo CP-04: el cliente responde el briefing (Interacción Constructiva)](https://youtu.be/RjtgiDwUkMU)
+- [Vídeo CP-05: el diseñador obtiene recomendaciones (Evaluación del Valor)](https://youtu.be/PWrWX6_K9s8)
+
+| Caso | Prueba | Tipo | Resultado |
+|---|---|---|---|
+| CP-01 | Smoke test | Smoke test | Superada |
+| CP-02 | Registro de un diseñador | Funcional | Superada, con observación |
+| CP-03 | Login con credenciales incorrectas | Funcional (caso negativo) | Superada |
+| CP-04 | El cliente responde el briefing | Usabilidad | Superada, con observación |
+| CP-05 | El diseñador obtiene recomendaciones | Aceptación | Superada, con observaciones |
   
   
 ## Descripción del proyecto
@@ -46,7 +60,7 @@ El objetivo es desarrollar una aplicación web que permita a diseñadores gráfi
 
 ## Estado del proyecto
 
-Fase de prototipado y primeras iteraciones de desarrollo (en desarrollo).
+Fase de testeo completada sobre el prototipo y la aplicación en local. Primeras iteraciones de desarrollo en curso.
 
 | Módulo | Estado |
 |---|---|
@@ -69,6 +83,11 @@ proyecto-intermodular-rogo/
 │   └── controllers/              # Proyectos, briefings, clientes y recomendaciones
 ├── database/
 │   └── briefingtool.sql          # Script de creación de la base de datos
+├── docs/
+│   ├── docPrototipado/           # Documento de las tareas 2.1 y 2.2 (Entregable 4)
+│   ├── mockups/                  # Mockups de las pantallas
+│   ├── navegacion/               # Diagrama de navegación
+│   └── testeo/                   # Banco de pruebas CP-01 a CP-05 (Entregable 5)
 ├── frontend/
 │   ├── index.html                # Inicio de sesión y registro
 │   ├── dashboard.html            # Panel del diseñador
