@@ -1,16 +1,79 @@
-/* Estilos generales de ROGO (colores y tipografía del prototipo de Figma) */
+/* Estilos generales de ROGO (colores y tipografía del prototipo de Figma).
+   Todos los valores están en las variables de :root; ver docs/guia-estilos.md */
 
 :root {
-    --primary: #4338CA;
-    --primary-dark: #3730A3;
-    --bg: #F8F9FC;
-    --surface: #FFFFFF;
-    --text: #111827;
-    --muted: #6B7280;
-    --border: #E5E7EB;
+    /* ----- Colores principales ----- */
+    --primary: #4338CA;          /* Botones, enlaces y elementos activos */
+    --primary-dark: #3730A3;     /* Hover de los botones principales */
+    --primary-light: #EEF2FF;    /* Fondo del menú activo y de los avatares */
+    --primary-soft: #E9E8FC;     /* Avisos destacados y tarjeta del plan */
+    --accent: #6366F1;           /* Detalles sobre fondo morado */
+    --on-primary: #FFFFFF;       /* Texto sobre fondo morado */
+
+    /* ----- Fondos y texto ----- */
+    --bg: #F8F9FC;               /* Fondo general de la aplicación */
+    --surface: #FFFFFF;          /* Tarjetas, menú lateral y formularios */
+    --heading: #312999;          /* Título principal de cada pantalla */
+    --text: #1F2937;             /* Texto normal */
+    --muted: #6B7280;            /* Texto secundario y descripciones */
+    --border: #E5E7EB;           /* Bordes y separadores */
+
+    /* ----- Estados ----- */
     --success: #16A34A;
+    --success-light: #DDF7EE;
     --error: #DC2626;
-    --radius: 10px;
+    --error-light: #FEF2F2;
+    --error-border: #FECACA;
+    --warning: #EA580C;
+    --warning-light: #FFF7ED;
+    --info-light: #EFF6FF;
+    --purple: #7E22CE;
+    --purple-light: #F3E8FF;
+
+    /* ----- Fondos de las tarjetas de resumen del panel ----- */
+    --card-blue: #EFF6FF;
+    --card-purple: #F5F3FF;
+    --card-green: #ECFDF5;
+    --card-orange: #FFF7ED;
+
+    /* ----- Tipografía ----- */
+    --font: 'Inter', system-ui, sans-serif;
+    --fs-h1: 1.75rem;            /* 28px - título de la pantalla */
+    --fs-stat: 1.875rem;         /* 30px - números de las tarjetas de resumen */
+    --fs-h2: 1.125rem;           /* 18px - título de tarjeta o sección */
+    --fs-h3: 0.9375rem;          /* 15px - título de un elemento de lista */
+    --fs-body: 1rem;             /* 16px - texto normal */
+    --fs-small: 0.875rem;        /* 14px - botones, campos y menú */
+    --fs-caption: 0.8125rem;     /* 13px - fechas y datos secundarios */
+    --fs-badge: 0.75rem;         /* 12px - etiquetas de estado */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* ----- Espaciados ----- */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+
+    /* ----- Bordes ----- */
+    --radius-sm: 8px;            /* Menú lateral, pestañas y logo */
+    --radius: 10px;              /* Botones y campos */
+    --radius-md: 12px;           /* Tarjetas */
+    --radius-lg: 16px;           /* Tarjeta de acceso y ventanas */
+    --radius-full: 999px;        /* Etiquetas de estado y avatares */
+
+    /* ----- Sombras ----- */
+    --shadow-sm: 0 1px 3px rgba(17, 24, 39, 0.1);
+    --shadow-md: 0 10px 30px rgba(17, 24, 39, 0.06);
+
+    /* ----- Medidas fijas ----- */
+    --sidebar-width: 240px;
+    --control-height: 44px;      /* Altura de botones y campos */
 }
 
 * {
@@ -23,13 +86,30 @@
 
 body {
     margin: 0;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--font);
+    font-size: var(--fs-body);
     background: var(--bg);
     color: var(--text);
 }
 
 h1, h2, h3 {
-    margin: 0 0 8px;
+    margin: 0 0 var(--space-2);
+}
+
+h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+    color: var(--heading);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-semibold);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-semibold);
 }
 
 .muted {
@@ -41,7 +121,7 @@ h1, h2, h3 {
 .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--space-3);
 }
 
 .brand-logo {
@@ -49,14 +129,14 @@ h1, h2, h3 {
     place-items: center;
     width: 36px;
     height: 36px;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     background: var(--primary);
-    color: #fff;
-    font-weight: 700;
+    color: var(--on-primary);
+    font-weight: var(--fw-bold);
 }
 
 .brand-name {
-    font-weight: 700;
+    font-weight: var(--fw-bold);
     font-size: 1.25rem;
 }
 
@@ -64,16 +144,18 @@ h1, h2, h3 {
 .btn-primary,
 .btn-secondary {
     font: inherit;
-    font-weight: 600;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semibold);
+    min-height: var(--control-height);
     border-radius: var(--radius);
-    padding: 12px 18px;
+    padding: var(--space-3) 18px;
     cursor: pointer;
     border: 1px solid transparent;
 }
 
 .btn-primary {
     background: var(--primary);
-    color: #fff;
+    color: var(--on-primary);
 }
 
 .btn-primary:hover:not(:disabled) {
@@ -100,7 +182,7 @@ h1, h2, h3 {
     min-height: 100vh;
     display: grid;
     place-items: center;
-    padding: 16px;
+    padding: var(--space-4);
 }
 
 .auth-card {
@@ -108,14 +190,14 @@ h1, h2, h3 {
     max-width: 420px;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px;
-    box-shadow: 0 10px 30px rgba(17, 24, 39, 0.06);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
 }
 
 .auth-intro {
     color: var(--muted);
-    margin: 16px 0 24px;
+    margin: var(--space-4) 0 var(--space-5);
     line-height: 1.5;
 }
 
@@ -124,25 +206,25 @@ h1, h2, h3 {
     grid-template-columns: 1fr 1fr;
     background: var(--bg);
     border-radius: var(--radius);
-    padding: 4px;
+    padding: var(--space-1);
     margin-bottom: 20px;
 }
 
 .tab {
     font: inherit;
-    font-weight: 600;
+    font-weight: var(--fw-semibold);
     border: 0;
     background: transparent;
     color: var(--muted);
     padding: 10px;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
 }
 
 .tab.active {
     background: var(--surface);
     color: var(--primary);
-    box-shadow: 0 1px 3px rgba(17, 24, 39, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .auth-form {
@@ -151,13 +233,15 @@ h1, h2, h3 {
 }
 
 .auth-form label {
-    font-weight: 500;
-    margin: 12px 0 6px;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-medium);
+    margin: var(--space-3) 0 6px;
 }
 
 .auth-form input {
     font: inherit;
-    padding: 12px;
+    min-height: var(--control-height);
+    padding: var(--space-3);
     border: 1px solid var(--border);
     border-radius: var(--radius);
 }
@@ -168,56 +252,67 @@ h1, h2, h3 {
 }
 
 .auth-form .btn-primary {
-    margin-top: 24px;
+    margin-top: var(--space-5);
 }
 
 .hint {
     color: var(--muted);
-    margin-top: 4px;
+    font-size: var(--fs-caption);
+    margin-top: var(--space-1);
 }
 
 .alert {
-    background: #FEF2F2;
+    background: var(--error-light);
     color: var(--error);
-    border: 1px solid #FECACA;
+    border: 1px solid var(--error-border);
     border-radius: var(--radius);
-    padding: 12px;
-    margin-bottom: 8px;
+    padding: var(--space-3);
+    margin-bottom: var(--space-2);
 }
 
 /* ---------- Panel ---------- */
 .dashboard-page {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: var(--sidebar-width) 1fr;
     min-height: 100vh;
 }
 
 .sidebar {
     background: var(--surface);
     border-right: 1px solid var(--border);
-    padding: 24px 16px;
+    padding: var(--space-5) var(--space-4);
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--space-5);
 }
 
 .sidebar nav {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-1);
     flex: 1;
 }
 
 .nav-link {
-    padding: 10px 12px;
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: 10px var(--space-3);
+    border-radius: var(--radius-sm);
     color: var(--muted);
     text-decoration: none;
-    font-weight: 500;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-medium);
+}
+
+.nav-link img,
+.nav-link svg {
+    width: 18px;
+    height: 18px;
 }
 
 .nav-link.active {
-    background: #EEF2FF;
+    background: var(--primary-light);
     color: var(--primary);
 }
 
@@ -227,32 +322,32 @@ h1, h2, h3 {
 }
 
 .content {
-    padding: 32px;
+    padding: var(--space-6);
 }
 
 .content-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 32px;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
 }
 
 .project-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 16px;
+    gap: var(--space-4);
 }
 
 .project-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: 20px;
 }
 
 .project-card p {
-    margin: 8px 0 0;
+    margin: var(--space-2) 0 0;
     line-height: 1.5;
 }
 
@@ -260,27 +355,39 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-2);
 }
 
+/* ---------- Etiquetas de estado ---------- */
 .badge {
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 999px;
+    font-size: var(--fs-badge);
+    font-weight: var(--fw-semibold);
+    padding: var(--space-1) 10px;
+    border-radius: var(--radius-full);
     background: var(--bg);
     color: var(--muted);
     white-space: nowrap;
 }
 
-.badge-en_progreso {
-    background: #EEF2FF;
+.badge-pendiente {
+    background: var(--warning-light);
+    color: var(--warning);
+}
+
+.badge-en_progreso,
+.badge-enviado {
+    background: var(--info-light);
     color: var(--primary);
 }
 
 .badge-completado {
-    background: #F0FDF4;
+    background: var(--success-light);
     color: var(--success);
+}
+
+.badge-resultados {
+    background: var(--purple-light);
+    color: var(--purple);
 }
 
 @media (max-width: 760px) {
@@ -299,7 +406,7 @@ h1, h2, h3 {
     }
 
     .content {
-        padding: 24px 16px;
+        padding: var(--space-5) var(--space-4);
     }
 
     .content-header {
