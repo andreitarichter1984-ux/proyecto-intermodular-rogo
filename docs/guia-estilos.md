@@ -176,7 +176,9 @@ En pantallas de menos de 760 px, el menú pasa a la parte superior y las opcione
 
 ## 6. Iconos
 
-Los iconos se exportan del prototipo de Figma en formato **SVG** y se guardan en `frontend/img/icons/`. Se nombran en minúsculas, sin tildes y con guiones (por ejemplo, `nuevo-proyecto.svg`).
+Los iconos están en formato **SVG** en `frontend/img/icons/`. Se nombran en minúsculas, sin tildes y con guiones (por ejemplo, `nuevo-proyecto.svg`).
+
+Los iconos de las pantallas de Figma están dentro de componentes que no se pueden exportar por separado desde el archivo compartido. Por eso se han tomado de [Lucide](https://lucide.dev) (licencia libre ISC), una librería de iconos de línea con el mismo estilo que los del prototipo: trazo de 2 px, esquinas redondeadas y tamaño base de 24 × 24 px. Si se necesita un icono nuevo, se busca en lucide.dev y se descarga en SVG con el nombre correspondiente.
 
 | Archivo | Dónde se usa |
 |---|---|
@@ -196,7 +198,7 @@ Los iconos se exportan del prototipo de Figma en formato **SVG** y se guardan en
 | `lapiz.svg` | Escribir mi propia respuesta, editar |
 | `ayuda.svg` | ¿Dudas? Escríbele a tu diseñador |
 
-Para que cojan el color del texto, los iconos se exportan con `stroke="currentColor"`. Tamaños: 18 px en el menú, 20 px en botones y 24 px dentro de los círculos de las tarjetas.
+Los iconos usan `stroke="currentColor"`, así que cogen el color del texto que los rodea. Tamaños: 18 px en el menú, 20 px en botones y 24 px dentro de los círculos de las tarjetas.
 
 ## 7. Cómo usar esta guía al programar
 
