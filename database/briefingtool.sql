@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS Usuario (
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
     contrasena VARCHAR(255) NOT NULL,
-    rol ENUM('usuario','disenador') NOT NULL DEFAULT 'usuario',
+    rol ENUM('usuario','disenador') NOT NULL DEFAULT 'disenador',
     portafolio_url VARCHAR(255),
     fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     activo TINYINT(1) DEFAULT 1,
@@ -154,8 +154,12 @@ INSERT IGNORE INTO Pregunta (id, texto, tipo, orden) VALUES
 
 INSERT IGNORE INTO Usuario (id_plan, nombre, email, contrasena, rol) VALUES
 (3, 'Ana Garcia',   'ana@test.com',     SHA2('test1234', 256), 'usuario'),
-(1, 'Luis Torres',  'luis@test.com',    SHA2('test1234', 256), 'usuario'),
+(1, 'Luis Torres',  'luis@test.com',    SHA2('test1234', 256), 'disenador'),
 (1, 'Carlos Ruiz',  'carlos@rogo.com',  SHA2('rogo1234', 256), 'disenador');
+
+-- Mejora CP-02: si la base de datos ya estaba creada, se actualiza el rol por defecto
+ALTER TABLE Usuario MODIFY rol ENUM('usuario','disenador') NOT NULL DEFAULT 'disenador';
+UPDATE Usuario SET rol = 'disenador' WHERE email = 'luis@test.com';
 
 INSERT IGNORE INTO Proyecto (id_usuario, id_disenador, nombre_logo, descripcion, sector, estilo, estado) VALUES
 (1, 3, 'Marca NovaTech', 'Identidad visual para startup tecnologica', 'Tecnologia', 'Moderno/Minimalista', 'en_progreso');

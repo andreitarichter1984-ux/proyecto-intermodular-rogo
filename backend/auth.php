@@ -78,7 +78,8 @@ switch ($accion) {
             responder(409, ['ok' => false, 'error' => 'Ya existe una cuenta con ese correo.']);
         }
 
-        $stmt = $pdo->prepare('INSERT INTO Usuario (nombre, email, contrasena) VALUES (?, ?, ?)');
+        // Las cuentas nuevas se crean con el rol de diseñador (mejora CP-02)
+        $stmt = $pdo->prepare("INSERT INTO Usuario (nombre, email, contrasena, rol) VALUES (?, ?, ?, 'disenador')");
         $stmt->execute([$nombre, $email, password_hash($contrasena, PASSWORD_DEFAULT)]);
 
         $stmt = $pdo->prepare('SELECT id, nombre, email, rol FROM Usuario WHERE id = ?');
