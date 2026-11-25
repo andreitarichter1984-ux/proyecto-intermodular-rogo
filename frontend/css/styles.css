@@ -1187,3 +1187,25 @@ h3 {
 .landing-page::after {
     display: none;
 }
+
+/* Panel derecho del registro (ilustración exportada del Figma) */
+.register-art {
+    display: block;
+    padding: 0;
+    background: var(--panel-gray);
+}
+
+.register-art img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 900px) {
+    .register-art {
+        display: none;
+    }
+}
