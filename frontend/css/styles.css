@@ -1163,4 +1163,27 @@ h3 {
     .hero-visual {
         min-height: 360px;
     }
+
+    .register-art {
+        display: none;
+    }
+}
+
+/* Fondo del panel del login (exportado del Figma) */
+.login-promo {
+    background:
+        url("../img/fondo-login.png") right center / cover no-repeat,
+        var(--primary);
+}
+
+/* Fondo de la landing (exportado del Figma) */
+.landing-page {
+    background:
+        url("../img/fondo-landing.png") center / cover no-repeat,
+        var(--primary);
+}
+
+.landing-page::before,
+.landing-page::after {
+    display: none;
 }
