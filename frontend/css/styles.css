@@ -1209,3 +1209,32 @@ h3 {
         display: none;
     }
 }
+
+/* Panel del login: contenido centrado */
+.login-promo {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-promo .brand {
+    justify-content: center;
+}
+
+.promo-text {
+    max-width: 380px;
+}
+
+.promo-note,
+.promo-preview {
+    width: 100%;
+    max-width: 420px;
+}
+
+.promo-preview {
+    text-align: left;
+}
+
+.promo-footer {
+    margin: var(--space-4) 0 0;
+}
