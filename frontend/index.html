@@ -1,56 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROGO · Iniciar sesión</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soluciones ROGO · Briefings profesionales para diseñadores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="auth-page">
-    <main class="auth-card">
-        <div class="brand">
-            <span class="brand-logo">R</span>
-            <span class="brand-name">ROGO</span>
+<body class="landing-page">
+<div class="landing">
+
+  <header class="landing-nav">
+    <a class="brand" href="index.html">
+      <span class="brand-logo">R</span>
+      <span class="brand-name">Soluciones ROGO</span>
+    </a>
+    <nav class="landing-links" aria-label="Principal">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="registro.html">Precios</a>
+    </nav>
+    <div class="landing-actions">
+      <a class="btn-light" href="login.html">Iniciar sesión</a>
+      <a class="btn-dark" href="registro.html">Registrarse</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="como-funciona">
+      <div class="hero-copy">
+        <p class="eyebrow">Briefings profesionales para diseñadores</p>
+        <h1>Conecta con tus clientes y crea proyectos exitosos</h1>
+        <p class="hero-text">ROGO te ayuda a recopilar toda la información que necesitas de tus clientes, analizar sus respuestas y obtener recomendaciones para tu proyecto de diseño.</p>
+        <div class="hero-actions">
+          <a class="btn-dark" href="registro.html">Crear cuenta gratis →</a>
+          <a class="btn-light" href="#beneficios">▶ Ver cómo funciona</a>
         </div>
-        <p class="auth-intro">Crea briefings guiados para tus clientes y recibe recomendaciones de identidad visual.</p>
-
-        <div class="tabs" role="tablist">
-            <button class="tab active" id="tab-login" role="tab" aria-selected="true" data-target="form-login">Iniciar sesión</button>
-            <button class="tab" id="tab-register" role="tab" aria-selected="false" data-target="form-register">Crear cuenta</button>
+        <ol class="hero-steps">
+          <li><span>1</span> Crea el proyecto</li>
+          <li><span>2</span> Envía el enlace</li>
+          <li><span>3</span> Recibe resultados</li>
+        </ol>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <!-- Maqueta dibujada en HTML/CSS. Si se exporta la imagen del Figma, se puede sustituir este bloque por un <img> -->
+        <div class="mock-window">
+          <div class="mock-bar"><span></span><span></span><span></span></div>
+          <div class="mock-body">
+            <aside class="mock-side"><i class="on"></i><i></i><i></i><i></i></aside>
+            <div class="mock-main">
+              <strong>Mis proyectos</strong>
+              <div class="mock-stats">
+                <div><b>12</b><small>Proyectos</small></div>
+                <div><b>8</b><small>Briefings</small></div>
+                <div><b>5</b><small>Respuestas</small></div>
+              </div>
+              <div class="mock-row"><span>Identidad Visual</span><span class="badge badge-completado">Completado</span></div>
+              <div class="mock-row"><span>Diseño de Packaging</span><span class="badge badge-enviado">En curso</span></div>
+              <div class="mock-row"><span>Rediseño Web</span><span class="badge badge-enviado">Enviado</span></div>
+            </div>
+          </div>
         </div>
+        <div class="mock-phone">
+          <div class="mock-screen">
+            <small>Briefing de cliente</small>
+            <strong>¿Qué estilo buscas?</strong>
+            <span class="chip on">Minimalista</span>
+            <span class="chip">Moderno</span>
+            <span class="chip">Clásico</span>
+            <div class="mock-btn">Continuar</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="alert" id="alert" role="alert" hidden></div>
+    <ul class="features" id="beneficios">
+      <li class="feature">
+        <span class="feature-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h7"/></svg>
+        </span>
+        <h3>Briefings profesionales</h3>
+        <p>Cuestionarios adaptados a diferentes tipos de proyectos de diseño.</p>
+      </li>
+      <li class="feature">
+        <span class="feature-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 3-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.6 0 4.5 1.8 4.5 4.5"/></svg>
+        </span>
+        <h3>Mejora la comunicación</h3>
+        <p>Recibe toda la información que necesitas de tus clientes de forma clara y organizada.</p>
+      </li>
+      <li class="feature">
+        <span class="feature-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        </span>
+        <h3>Recomendaciones inteligentes</h3>
+        <p>Analiza las respuestas y te ofrece sugerencias para tu proyecto.</p>
+      </li>
+      <li class="feature">
+        <span class="feature-icon" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <h3>Ahorra tiempo</h3>
+        <p>Dedica más tiempo a crear y menos a recopilar información.</p>
+      </li>
+    </ul>
+  </main>
 
-        <form id="form-login" class="auth-form" novalidate>
-            <label for="login-email">Correo electrónico</label>
-            <input type="email" id="login-email" name="email" autocomplete="email" required>
-
-            <label for="login-password">Contraseña</label>
-            <input type="password" id="login-password" name="contrasena" autocomplete="current-password" required>
-
-            <button type="submit" class="btn-primary">Iniciar sesión</button>
-        </form>
-
-        <form id="form-register" class="auth-form" novalidate hidden>
-            <label for="register-name">Nombre</label>
-            <input type="text" id="register-name" name="nombre" autocomplete="name" required>
-
-            <label for="register-email">Correo electrónico</label>
-            <input type="email" id="register-email" name="email" autocomplete="email" required>
-
-            <label for="register-password">Contraseña</label>
-            <input type="password" id="register-password" name="contrasena" autocomplete="new-password" minlength="8" required>
-            <small class="hint">Mínimo 8 caracteres.</small>
-
-            <label for="register-password2">Repite la contraseña</label>
-            <input type="password" id="register-password2" autocomplete="new-password" required>
-
-            <button type="submit" class="btn-primary">Crear cuenta</button>
-        </form>
-    </main>
-
-    <script src="js/auth.js"></script>
+</div>
 </body>
 </html>
