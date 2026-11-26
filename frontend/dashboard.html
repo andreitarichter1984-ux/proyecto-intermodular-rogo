@@ -3,42 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROGO · Panel</title>
+    <title>ROGO · Panel principal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="dashboard-page">
+
+    <!-- Menú lateral (común a las dos versiones del panel) -->
     <aside class="sidebar">
         <div class="brand">
             <span class="brand-logo">R</span>
-            <span class="brand-name">ROGO</span>
+            <span class="brand-name">Soluciones ROGO</span>
         </div>
-        <nav>
-            <a href="dashboard.html" class="nav-link active">Panel principal</a>
-            <a href="#" class="nav-link disabled" aria-disabled="true">Proyectos</a>
-            <a href="#" class="nav-link disabled" aria-disabled="true">Briefings</a>
-            <a href="#" class="nav-link disabled" aria-disabled="true">Clientes</a>
+
+        <nav aria-label="Navegación principal">
+            <a href="dashboard.html" class="nav-link active" aria-current="page"><span class="icon" style="--icon:url('../img/icons/inicio.svg')"></span>Inicio</a>
+            <a href="#" class="nav-link disabled" aria-disabled="true"><span class="icon" style="--icon:url('../img/icons/proyectos.svg')"></span>Proyectos</a>
+            <a href="#" class="nav-link disabled" aria-disabled="true"><span class="icon" style="--icon:url('../img/icons/briefings.svg')"></span>Briefings</a>
+            <a href="#" class="nav-link disabled" aria-disabled="true"><span class="icon" style="--icon:url('../img/icons/clientes.svg')"></span>Clientes</a>
+            <a href="#" class="nav-link disabled" aria-disabled="true"><span class="icon" style="--icon:url('../img/icons/resultados.svg')"></span>Resultados</a>
         </nav>
-        <button id="logout" class="btn-secondary">Cerrar sesión</button>
+
+        <div class="plan-card">
+            <strong>Plan <span id="user-plan">—</span></strong>
+            <span class="plan-link">Gestionar plan</span>
+        </div>
+
+        <div class="user-box">
+            <span class="avatar" id="user-initials">…</span>
+            <div class="user-box-text">
+                <strong id="user-name-side">…</strong>
+                <span class="muted" id="user-email">Diseñador</span>
+            </div>
+            <button id="logout" class="logout-btn" title="Cerrar sesión" aria-label="Cerrar sesión">Salir</button>
+        </div>
     </aside>
 
-    <main class="content">
-        <header class="content-header">
-            <div>
-                <h1>Hola, <span id="user-name">…</span></h1>
-                <p class="muted"><span id="user-email"></span> · Plan <span id="user-plan"></span></p>
-            </div>
-            <button class="btn-primary" disabled title="Próximamente">Nuevo proyecto</button>
+    <div class="dash-main">
+        <header class="topbar">
+            <span class="muted" id="user-name-top"></span>
+            <span class="avatar" id="user-initials-top">…</span>
         </header>
 
-        <section>
-            <h2>Tus proyectos</h2>
-            <div id="projects" class="project-list">
-                <p class="muted">Cargando proyectos…</p>
-            </div>
-        </section>
-    </main>
+        <main class="content">
+
+            <!-- Pantalla 03A: primer acceso, sin proyectos -->
+            <section id="view-empty" hidden>
+                <h1>Te damos la bienvenida, <span class="js-name">…</span></h1>
+                <p class="muted dash-sub">Empieza creando tu primer proyecto. Te guiamos paso a paso.</p>
+
+                <div class="hero-card">
+                    <h2>Crea tu primer proyecto</h2>
+                    <p>En menos de 2 minutos tendrás un briefing listo para enviar a tu cliente.</p>
+                    <button class="btn-light" disabled title="Próximamente"><span class="icon" style="--icon:url('../img/icons/mas.svg')"></span>Nuevo proyecto</button>
+                    <ol class="hero-card-steps">
+                        <li><span class="step-num">1</span><div><strong>Crea el proyecto</strong><span>Nombre, tipo y datos de tu cliente</span></div></li>
+                        <li><span class="step-num">2</span><div><strong>Envía el enlace</strong><span>Tu cliente responde el briefing</span></div></li>
+                        <li><span class="step-num">3</span><div><strong>Recibe recomendaciones</strong><span>Colores, tipografía y estilo visual</span></div></li>
+                    </ol>
+                </div>
+
+                <h2 class="dash-section">¿Necesitas ayuda?</h2>
+                <div class="help-grid">
+                    <a class="help-card" href="#"><span class="help-icon"><span class="icon" style="--icon:url('../img/icons/flecha-derecha.svg')"></span></span><div><strong>Cómo funciona ROGO</strong><span>Mira una demo de 1 minuto.</span><em>Ver cómo funciona →</em></div></a>
+                    <a class="help-card" href="#"><span class="help-icon"><span class="icon" style="--icon:url('../img/icons/resultados.svg')"></span></span><div><strong>Ejemplo de resultados</strong><span>Así se ven las recomendaciones.</span><em>Ver un ejemplo →</em></div></a>
+                    <a class="help-card" href="#"><span class="help-icon"><span class="icon" style="--icon:url('../img/icons/ayuda.svg')"></span></span><div><strong>Centro de ayuda</strong><span>Resuelve tus dudas.</span><em>Ir al centro de ayuda →</em></div></a>
+                </div>
+            </section>
+
+            <!-- Pantalla 03: panel con proyectos -->
+            <section id="view-projects" hidden>
+                <div class="dash-head">
+                    <div>
+                        <h1>Buenos días, <span class="js-name">…</span></h1>
+                        <p class="muted dash-sub">Aquí tienes un resumen de la actividad de tus proyectos.</p>
+                    </div>
+                    <button class="btn-primary" disabled title="Próximamente">+ Nuevo proyecto</button>
+                </div>
+
+                <div class="notice" id="notice" hidden>
+                    <span class="notice-icon"><span class="icon" style="--icon:url('../img/icons/check.svg')"></span></span>
+                    <div><strong id="notice-title"></strong><span>Ya puedes revisar las recomendaciones de diseño.</span></div>
+                    <button class="btn-outline" disabled title="Próximamente">Ver resultados</button>
+                </div>
+
+                <div class="stat-grid">
+                    <article class="stat stat-blue"><span class="stat-icon"><span class="icon" style="--icon:url('../img/icons/proyectos.svg')"></span></span><strong id="stat-activos">0</strong><div><span>Proyectos activos</span><em>Ver proyectos →</em></div></article>
+                    <article class="stat stat-purple"><span class="stat-icon"><span class="icon" style="--icon:url('../img/icons/briefings.svg')"></span></span><strong id="stat-pendientes">0</strong><div><span>Briefings pendientes</span><em>Ver briefings →</em></div></article>
+                    <article class="stat stat-green"><span class="stat-icon"><span class="icon" style="--icon:url('../img/icons/check.svg')"></span></span><strong id="stat-listos">0</strong><div><span>Resultados listos</span><em>Ver resultados →</em></div></article>
+                    <article class="stat stat-orange"><span class="stat-icon"><span class="icon" style="--icon:url('../img/icons/clientes.svg')"></span></span><strong id="stat-clientes">0</strong><div><span>Clientes</span><em>Ver clientes →</em></div></article>
+                </div>
+
+                <div class="dash-columns">
+                    <section class="panel">
+                        <div class="panel-head"><h2>Actividad reciente</h2><a href="#" class="link">Ver todo</a></div>
+                        <ul class="activity" id="activity"></ul>
+                    </section>
+                    <section class="panel">
+                        <div class="panel-head"><h2>Mis proyectos recientes</h2><a href="#" class="link">Ver todos</a></div>
+                        <ul class="recent" id="recent"></ul>
+                    </section>
+                </div>
+
+                <h2 class="dash-section">Acciones rápidas</h2>
+                <div class="quick-grid">
+                    <a class="quick quick-main" href="#"><span class="icon" style="--icon:url('../img/icons/mas.svg')"></span><div><strong>Nuevo proyecto</strong><span>Crea un briefing para un cliente.</span><em>Empezar →</em></div></a>
+                    <a class="quick" href="#"><span class="icon" style="--icon:url('../img/icons/proyectos.svg')"></span><div><strong>Ver proyectos</strong><span>Gestiona el estado de cada uno</span><em>Ir a proyectos →</em></div></a>
+                    <a class="quick" href="#"><span class="icon" style="--icon:url('../img/icons/briefings.svg')"></span><div><strong>Ver briefings</strong><span>Revisa envíos y respuestas.</span><em>Ir a briefings →</em></div></a>
+                </div>
+            </section>
+
+            <p class="muted" id="dash-error" hidden></p>
+        </main>
+    </div>
 
     <script src="js/dashboard.js"></script>
 </body>
